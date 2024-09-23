@@ -30,6 +30,19 @@
         },
 
         {
+            "name": "Counter Project",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-sandbox-counter",
+            "program": "${workspaceFolder}/sandbox/counter/bin/Debug/net8.0/counter.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/sandbox/counter",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+
+        {
             "name": "C# Prep 1",
             "type": "coreclr",
             "request": "launch",
