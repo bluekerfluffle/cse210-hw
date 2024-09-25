@@ -4,28 +4,26 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Prep3 World!");
+        Random randomGenerator = new Random();
+        int magic = randomGenerator.Next(1, 101);
 
-        Console.Write("What is the magic number?");
+        int guess = 0;
 
-        string userMagic = Console.ReadLine();
-        int magic = int.Parse(userMagic);
+        do{
+            Console.Write("What is your guess?");
+            string userGuess = Console.ReadLine();
+            guess = int.Parse(userGuess);
 
-        Console.Write("What is your guess?");
-        string userGuess = Console.ReadLine();
-        int guess = int.Parse(userGuess);
-
-        while (guess != magic)
-        {
-            if (guess >= magic)
+            if (guess < magic)
             {
                 Console.WriteLine("Higher");
             }
-            else if (guess <= magic)
+            else if (guess > magic)
             {
                 Console.WriteLine("Lower");
             }
-        }
+        }while (guess != magic);
+        
         
         if (guess == magic)
         {
