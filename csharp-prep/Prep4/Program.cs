@@ -24,12 +24,25 @@ class Program
             }
         }
 
-        int i = 0;
+        int sum = 0;
+        int max = numberList[0];
 
         foreach (int item in numberList)
         {
+            sum += item;
             
+
+            if (item > max)
+            {
+                max = item;
+            }
         }
 
+        int count = numberList.Count;
+        double average = (double)sum /count;
+
+        Console.WriteLine($"The sum is {sum}.");
+        Console.WriteLine($"The average is {average}.");
+        Console.WriteLine($"The largest number is {max}.");
     }
 }
