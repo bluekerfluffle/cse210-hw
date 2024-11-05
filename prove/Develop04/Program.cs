@@ -12,9 +12,9 @@ class Program
             Console.WriteLine("3. Listing Activity");
             Console.WriteLine("4. Exit");
             Console.Write("Select an option: ");
-            string choice = Console.ReadLine();
+            string _choice = Console.ReadLine();
 
-            MindfulnessActivity activity = choice switch
+            MindfulnessActivity activity = _choice switch
             {
                 "1" => new BreathingActivity(),
                 "2" => new ReflectionActivity(),
