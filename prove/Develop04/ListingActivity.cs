@@ -30,7 +30,7 @@ public class ListingActivity : MindfulnessActivity
             Console.Write("Enter an item: ");
             Console.ReadLine();
             itemCount++;
-            elapsed += 5; // Assuming each entry takes roughly 5 seconds
+            elapsed += 5;
             Pause();
         }
 
