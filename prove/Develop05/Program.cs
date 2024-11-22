@@ -33,6 +33,7 @@ class Program
                 Console.WriteLine("  1. Simple Goal");
                 Console.WriteLine("  2. Eternal Goal");
                 Console.WriteLine("  3. Checklist Goal");
+                Console.WriteLine("  4. Negative Goal");
                 Console.Write("Which type of goal would you like to create? ");
 
                 string goalType = Console.ReadLine();
@@ -79,6 +80,19 @@ class Program
                     ChecklistGoal checklist = new ChecklistGoal(name, description, score, bonusPoints, amountForBonus, 0);
                     goals.Add(checklist);
                 }
+                else if (goalType == "4")
+                {
+                    Console.Write("What is the name of your negative goal? ");
+                    string name = Console.ReadLine();
+                    Console.Write("What is a short description of it? ");
+                    string description = Console.ReadLine();
+                    Console.Write("What is the penalty for this goal? ");
+                    int penalty = int.Parse(Console.ReadLine());
+
+                    NegativeGoal negative = new NegativeGoal(name, description, penalty);
+                    goals.Add(negative);
+                }
+
             }
 
             else if (menuItem == "2")
@@ -161,6 +175,22 @@ class Program
                             ChecklistGoal checklist = new ChecklistGoal(name, description, score, bonusPoints, amountForBonus, timesCompleted);
                             goals.Add(checklist);
                         }
+
+                        else if (sections[0] == "NegativeGoal")
+                        {
+                            string name = listInfo[0];
+                            string description = listInfo[1];
+                            int penalty = int.Parse(listInfo[2]);
+                            bool isCompleted = bool.Parse(listInfo[3]);
+
+                            NegativeGoal negativeGoal = new NegativeGoal(name, description, penalty);
+                            if (isCompleted)
+                            {
+                                negativeGoal.RecordEvent(); 
+                            goals.Add(negativeGoal);
+                            }
+                        }
+
 
                         if (points >= 100 && points <= 199)
                         {
