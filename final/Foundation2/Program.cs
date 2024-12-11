@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {   
         Console.WriteLine("---------------------------------------------");
-        //order 1 
+    
         Address address1 = new Address ("2708 Nephi Ave.", "Dallas", "TX", "USA");
         Customer customer1 = new Customer("Ben Franklin", address1);
 
@@ -20,7 +20,6 @@ class Program
         double order1Subtotal = order1.CalcSubtotal();
         double order1Total = order1.CalcTotal();
 
-        //display order 1
         order1.DisplayShippingLabel(); 
         Console.WriteLine();
         order1.DisplayPackingLabel();
@@ -30,8 +29,6 @@ class Program
 
         Console.WriteLine("---------------------------------------------");
 
-
-        //order 2
         Address address2 = new Address ("99 Alma Dr", "Salt Lake City", "UT", "USA");
         Customer customer2 = new Customer("John Henry", address2);
 
@@ -48,8 +45,6 @@ class Program
         double order2Subtotal = order2.CalcSubtotal();
         double order2Total = order2.CalcTotal();
 
-
-        //display order 2
         order2.DisplayShippingLabel(); 
         Console.WriteLine();
         order2.DisplayPackingLabel();
